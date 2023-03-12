@@ -3,12 +3,11 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const webpack = require("webpack");
 const path = require("path");
-const open = require("open");
 
 module.exports = merge(common, {
   mode: "development",
   entry: {
-    index: "./src/localdev.tsx",
+    index: "./src/index.tsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -21,7 +20,7 @@ module.exports = merge(common, {
       "process.env.VERSION": JSON.stringify(process.env.npm_package_version),
     }),
     new HtmlWebpackPlugin({
-      template: "./src/localdev.html",
+      template: "./src/index.html",
       filename: "./index.html",
     }),
   ],
@@ -62,7 +61,7 @@ module.exports = merge(common, {
     open: {
       target: ["/"],
       app: {
-        name: open.apps.chrome,
+        name: "google chrome",
         arguments: ["--incognito", "--new-window"],
       },
     },

@@ -27,8 +27,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin({
-      patterns: [{ from: "translations", to: "translations" }],
-    }),
+    // new CopyWebpackPlugin({
+    //  patterns: [{ from: "translations", to: "translations" }],
+    //}),
   ],
 };
